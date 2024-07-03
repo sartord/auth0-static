@@ -16,9 +16,9 @@
   </head>
 
   <body>
-    <img src="login.png" onclick="login()" style="cursor:pointer;" />
+    <img id="img-login" src="login.png" onclick="login()" style="cursor:pointer;" />
     <!--<button id="btn-login" disabled="true" onclick="login()">Log in</button>-->
-    <button id="btn-logout" disabled="true" onclick="logout()">Log out</button>
+    <button id="btn-logout" onclick="logout()" style="display:none;">Lineログアウト</button>
     
     <!--ログイン後に表示-->
     <div class="hidden" id="gated-content">
