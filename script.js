@@ -56,12 +56,12 @@ const updateUI = async () => {
     // document.getElementById(
     //   "ipt-access-token"
     // ).innerHTML = await auth0.getTokenSilently();
-    var user = await auth0.getUser();
+    //var user = await auth0.getUser();
 
     document.getElementById("ipt-user-profile").innerHTML = JSON.stringify(
       await auth0.getUser()
     );
-    document.getElementById("ipt-user-profile").innerHTML = user["name"];
+    document.getElementById("ipt-user-profile").innerHTML = await auth0.getUser()["name"];
 
     //プロフ画像
     //const profile = await auth0.getUser();
