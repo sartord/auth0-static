@@ -43,10 +43,6 @@ window.onload = async () => {
 const updateUI = async () => { 
   const isAuthenticated = await auth0.isAuthenticated();
 
-  //document.getElementById("btn-logout").disabled = !isAuthenticated;
-  //document.getElementById("btn-login").disabled = isAuthenticated;
-  
-  // NEW - add logic to show/hide gated content after authentication
   if (isAuthenticated) {
     document.getElementById("img-login").style.display = "none";
     document.getElementById("btn-logout").style.display = "block";
@@ -56,12 +52,12 @@ const updateUI = async () => {
     // document.getElementById(
     //   "ipt-access-token"
     // ).innerHTML = await auth0.getTokenSilently();
-    //var user = await auth0.getUser();
+    user = await auth0.getUser();
 
     document.getElementById("ipt-user-profile").innerHTML = JSON.stringify(
       await auth0.getUser()
     );
-    document.getElementById("user-name").innerHTML = await auth0.getUser();
+    document.getElementById("user-name").innerHTML = user['name'];
 
     //プロフ画像
     //const profile = await auth0.getUser();
