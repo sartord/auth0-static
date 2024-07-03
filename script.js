@@ -54,6 +54,7 @@ const updateUI = async () => {
     );
     const profile = await auth0.getUser();
     document.getElementById("user-name").innerHTML = profile.name;
+    document.getElementById("user-id").innerHTML = profile.sub;
 
     //プロフ画像
     //const profile = await auth0.getUser();
