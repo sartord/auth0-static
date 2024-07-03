@@ -53,13 +53,15 @@ const updateUI = async () => {
 
     document.getElementById("gated-content").classList.remove("hidden");
 
-    document.getElementById(
-      "ipt-access-token"
-    ).innerHTML = await auth0.getTokenSilently();
+    // document.getElementById(
+    //   "ipt-access-token"
+    // ).innerHTML = await auth0.getTokenSilently();
+    var user = await auth0.getUser();
 
     document.getElementById("ipt-user-profile").innerHTML = JSON.stringify(
       await auth0.getUser()
     );
+    document.getElementById("ipt-user-profile").innerHTML = user["name"];
 
     //プロフ画像
     //const profile = await auth0.getUser();

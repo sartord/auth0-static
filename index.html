@@ -17,22 +17,17 @@
 
   <body>
     <img id="img-login" src="login.png" onclick="login()" style="cursor:pointer;" />
-    <!--<button id="btn-login" disabled="true" onclick="login()">Log in</button>-->
-    <button id="btn-logout" onclick="logout()" style="display:none;">Lineログアウト</button>
+    <button id="btn-logout" onclick="logout()" style="display:none;">連携解除</button>
     
     <!--ログイン後に表示-->
     <div class="hidden" id="gated-content">
-      <p>
-        You're seeing this content because you're currently
-        <strong>logged in</strong>.
-      </p>
-      <label>
-        Access token: 
-        <pre id="ipt-access-token"></pre>
-      </label>
       <label>
         User profile:
         <pre id="ipt-user-profile"></pre>
+      </label>
+      <label>
+        User name:
+        <pre id="user-name"></pre>
       </label>
     </div>
 
