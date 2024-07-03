@@ -48,7 +48,6 @@ const updateUI = async () => {
     document.getElementById("btn-logout").style.display = "block";
 
     document.getElementById("gated-content").classList.remove("hidden");
-    user = await auth0.getUser();
 
     document.getElementById("ipt-user-profile").innerHTML = JSON.stringify(
       await auth0.getUser()
