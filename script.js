@@ -61,7 +61,7 @@ const updateUI = async () => {
     document.getElementById("ipt-user-profile").innerHTML = JSON.stringify(
       await auth0.getUser()
     );
-    document.getElementById("ipt-user-profile").innerHTML = await auth0.getUser()["name"];
+    document.getElementById("user-name").innerHTML = await auth0.getUser();
 
     //プロフ画像
     //const profile = await auth0.getUser();
