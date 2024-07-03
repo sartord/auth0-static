@@ -1,8 +1,8 @@
 'use strict';
 
-const APP_PATH = `/auth0-static`; // https://ユーザー名.github.io/<ココ> or ルートパス利用なら`/`だけでOK
+const APP_PATH = `/auth0-static`;
 let auth0 = null;
-const fetchAuthConfig = () => fetch("auth_config.json"); // auth_config.json読み込み
+const fetchAuthConfig = () => fetch("auth_config.json");
 
 const configureClient = async () => {
   const response = await fetchAuthConfig();
@@ -59,8 +59,8 @@ const updateUI = async () => {
     );
 
     //プロフ画像
-    const profile = await auth0.getUser();
-    document.getElementById("ipt-user-profile-image").src = profile.picture;
+    //const profile = await auth0.getUser();
+    //document.getElementById("ipt-user-profile-image").src = profile.picture;
 
   } else {
     document.getElementById("gated-content").classList.add("hidden");
