@@ -22,12 +22,12 @@
   </head>
 
   <body>
-    <img id="img-login" src="login.png" onclick="login()" style="cursor:pointer;" /><br>
+    <img id="img-login" src="login.png" onclick="login()" style="cursor:pointer;" />
     <span class="desc" id="desc">インフルエンサーの登録には「Line ID連携」が必須です</span>
     <button id="btn-logout" onclick="logout()" style="display:none;">連携解除</button>
     
     <!--ログイン後に表示-->
-    <div> <!-- class="hidden" id="gated-content">-->
+    <div class="hidden" id="gated-content">
       <label>
         User profile:
         <pre id="ipt-user-profile"></pre>
