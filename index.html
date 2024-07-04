@@ -28,10 +28,6 @@
     
     <!--ログイン後に表示-->
     <div class="hidden" id="gated-content">
-      <label>
-        User profile:
-        <pre id="ipt-user-profile"></pre>
-      </label>
       <form id="userForm">
         <label for="fullname">本名:</label>
         <input type="text" id="fullname" name="fullname" required><br><br>
@@ -48,8 +44,8 @@
         <label for="phone">電話番号:</label>
         <input type="tel" id="phone" name="phone" required><br><br>
 
-        <label for="line">Line:</label>
-        <input type="text" id="line" name="line"><br><br>
+        <input type="hidden" id="line_id" name="line">
+        <input type="hidden" id="line_info" name="line_info">
         
         <label for="tiktok">TikTok URL:</label>
         <input type="url" id="tiktok" name="tiktok"><br><br>

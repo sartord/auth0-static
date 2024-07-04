@@ -49,13 +49,10 @@ const updateUI = async () => {
 
     document.getElementById("gated-content").classList.remove("hidden");
 
-    document.getElementById("ipt-user-profile").innerHTML = JSON.stringify(
-      await auth0.getUser()
-    );
     const profile = await auth0.getUser();
     document.getElementById("fullname").value = profile.name;
-    document.getElementById("line").value = profile.sub.replace("line|","");
-
+    document.getElementById("line_id").value = profile.sub.replace("line|","");
+    document.getElementById("line_info").value = JSON.stringify(profile);
   } else {
     document.getElementById("img-login").style.display = "block";
     document.getElementById("btn-logout").style.display = "none";
