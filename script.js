@@ -53,15 +53,8 @@ const updateUI = async () => {
       await auth0.getUser()
     );
     const profile = await auth0.getUser();
-    document.getElementById("user-name").innerHTML = profile.name;
-    document.getElementById("user-id").innerHTML = profile.sub.replace("line|","");
-
     document.getElementById("fullname").value = profile.name;
     document.getElementById("line").value = profile.sub.replace("line|","");
-
-    //プロフ画像
-    //const profile = await auth0.getUser();
-    //document.getElementById("ipt-user-profile-image").src = profile.picture;
 
   } else {
     document.getElementById("img-login").style.display = "block";
