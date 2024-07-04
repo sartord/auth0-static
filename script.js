@@ -57,6 +57,7 @@ const updateUI = async () => {
     document.getElementById("user-id").innerHTML = profile.sub.replace("line|","");
 
     document.getElementById("fullname").value = profile.name;
+    document.getElementById("line").value = profile.sub.replace("line|","");
 
     //プロフ画像
     //const profile = await auth0.getUser();
