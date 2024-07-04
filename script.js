@@ -44,8 +44,8 @@ const updateUI = async () => {
   const isAuthenticated = await auth0.isAuthenticated();
 
   if (isAuthenticated) {
-    document.getElementById("img-login").style.display = "none";
-    document.getElementById("btn-logout").style.display = "block";
+    document.getElementById("login").style.display = "none";
+    document.getElementById("logout").style.display = "block";
 
     document.getElementById("gated-content").classList.remove("hidden");
 
@@ -54,8 +54,8 @@ const updateUI = async () => {
     document.getElementById("line_id").value = profile.sub.replace("line|","");
     document.getElementById("line_info").value = JSON.stringify(profile);
   } else {
-    document.getElementById("img-login").style.display = "block";
-    document.getElementById("btn-logout").style.display = "none";
+    document.getElementById("login").style.display = "block";
+    document.getElementById("logout").style.display = "none";
     document.getElementById("gated-content").classList.add("hidden");
   }
 };
