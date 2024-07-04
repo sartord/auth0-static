@@ -20,7 +20,7 @@
     <button id="btn-logout" onclick="logout()" style="display:none;">連携解除</button>
     
     <!--ログイン後に表示-->
-    <div class="hidden" id="gated-content">
+    <div> <!-- class="hidden" id="gated-content">-->
       <label>
         User profile:
         <pre id="ipt-user-profile"></pre>
@@ -33,6 +33,42 @@
         User id:
         <pre id="user-id"></pre>
       </label>
+      <form id="userForm">
+        <label for="fullname">本名:</label>
+        <input type="text" id="fullname" name="fullname" required><br><br>
+        
+        <label for="email">メールアドレス:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="address">住所:</label>
+        <input type="text" id="address" name="address" required><br><br>
+        
+        <label for="age">年齢:</label>
+        <input type="number" id="age" name="age" required><br><br>
+        
+        <label for="phone">電話番号:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+        
+        <label for="tiktok">TikTok URL:</label>
+        <input type="url" id="tiktok" name="tiktok"><br><br>
+        
+        <label for="youtube">YouTube URL:</label>
+        <input type="url" id="youtube" name="youtube"><br><br>
+        
+        <label for="instagram">Instagram URL:</label>
+        <input type="url" id="instagram" name="instagram"><br><br>
+        
+        <label for="twitter">X (Twitter) URL:</label>
+        <input type="url" id="twitter" name="twitter"><br><br>
+        
+        <label for="consent">個人情報同意:</label>
+        <input name="confirm" id="confirm" required="" type="checkbox" class="sd appear"><br><br>
+        <a href="https://buzzrista.logly.co.jp/terms-and-conditions" class="text link sd appear">個人向け取引基本規約に同意する</a>
+        
+        <button type="submit">送信</button>
+    </form>
+
+    <script src="formValidation.js"></script>
     </div>
 
     <script src="https://cdn.auth0.com/js/auth0-spa-js/1.2/auth0-spa-js.production.js"></script>
