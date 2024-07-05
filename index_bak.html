@@ -21,98 +21,100 @@
   </head>
 
   <body>
-    <img id="img-login" src="login.png" onclick="login()" style="cursor:pointer;" />
-    <button id="btn-logout" onclick="logout()" style="display:none;">連携解除</button>
-    
-    <!--ログイン後に表示-->
-    <div> <!-- class="hidden" id="gated-content">-->
-      <label>
-        User profile:
-        <pre id="ipt-user-profile"></pre>
-      </label>
-      <label>
-        User name:
-        <pre id="user-name"></pre>
-      </label>
-      <label>
-        User id:
-        <pre id="user-id"></pre>
-      </label>
-      <form name="インフルエンサー登録フォーム" class="sd appear" >
-        <label class="sd appear">
-          <div class="sd appear">
-            <p class="text sd appear">ご本名</p>
-            <p class="text sd appear">*</p>
-          </div><input name="お名前" placeholder="氏名を入力" required="" type="text" autocomplete="off" class="sd appear">
+    <div style="background-color: #000000;">
+      <img id="img-login" src="login.png" onclick="login()" style="cursor:pointer;" />
+      <button id="btn-logout" onclick="logout()" style="display:none;">連携解除</button>
+      
+      <!--ログイン後に表示-->
+      <div> <!-- class="hidden" id="gated-content">-->
+        <label>
+          User profile:
+          <pre id="ipt-user-profile"></pre>
         </label>
-        <label class="sd appear">
-          <div class="sd appear">
-            <p class="text sd appear">メールアドレス</p>
-            <p class="text sd appear">*</p>
-          </div>
-          <input name="メールアドレス" placeholder="ご連絡可能なメールアドレスを入力" required="" type="email" autocomplete="off" class="sd appear">
+        <label>
+          User name:
+          <pre id="user-name"></pre>
         </label>
-        <label class="sd appear">
-          <div class="sd appear">
-            <p class="text sd appear">ご住所</p>
-            <p class="text sd appear">*</p>
-          </div>
-          <input name="ご住所" placeholder="ご住所を入力" required="" type="text" autocomplete="off" class="sd appear">
+        <label>
+          User id:
+          <pre id="user-id"></pre>
         </label>
-        <label class="sd appear">
-          <div class="sd appear">
-            <p class="text sd appear">ご年齢</p>
-            <p class="text sd appear">*</p>
-          </div>
-          <input name="ご年齢" placeholder="ご年齢を入力（整数）" required="" type="text" autocomplete="off" class="sd appear">
-        </label>
-        <label class="sd appear">
-          <div class="sd appear">
-            <p class="text sd appear">電話番号</p>
-            <p class="text sd appear">*</p>
-          </div>
-          <input name="電話番号" placeholder="電話番号(ハイフン無し)を入力" required="" type="tel" autocomplete="off" class="sd appear">
-        </label>
-        <label class="sd appear">
-          <div class="sd appear">
-            <p class="text sd appear">LINE ID</p>
-            <p class="text sd appear">*</p>
-          </div>
-          <input name="LINEID" placeholder="LINEID" required="" type="tel" autocomplete="off" class="sd appear">
-        </label>
-        <label class="sd appear">
-          <div class="sd appear">
-            <p class="text sd appear">TikTokプロフィールURL</p>
-          </div>
-          <input name="TikTokプロフィール名" placeholder="https://www.tiktok.com/@entame_station" type="text" autocomplete="off" class="sd appear">
-        </label>
-        <label class="sd appear">
-          <div class="sd appear">
-            <p class="text sd appear">YouTubeURL</p>
-          </div>
-          <input name="YouTubeURL" placeholder="https://www.youtube.com/c/adictor" type="text" autocomplete="off" class="sd appear">
-        </label>
-        <label class="sd appear">
-          <div class="sd appear">
-            <p class="text sd appear">InstagramURL</p>
-          </div>
-          <input name="InstagramURL" placeholder="https://www.instagram.com/adictor_jp/" type="text" autocomplete="off" class="sd appear">
-        </label>
-        <label class="sd appear">
-          <div class="sd appear">
-            <p class="text sd appear">X URL</p>
-          </div>
-          <input name="X URL" placeholder="https://twitter.com/adictorofficial" type="text" autocomplete="off" class="sd appear">
-        </label>
-        <label class="sd appear">
-          <input name="Confirm" required="" type="checkbox" class="sd appear">
-          <a href="/terms-and-conditions" class="text link sd appear">個人向け取引基本規約に同意する</a>
-        </label>
-        <button class="button sd appear"><p  class="text sd appear">送　信</p></button>
-      </form>
-    </div>
+        <form name="インフルエンサー登録フォーム" class="sd appear" >
+          <label class="sd appear">
+            <div class="sd appear">
+              <p class="text sd appear">ご本名</p>
+              <p class="text sd appear">*</p>
+            </div><input name="お名前" placeholder="氏名を入力" required="" type="text" autocomplete="off" class="sd appear">
+          </label>
+          <label class="sd appear">
+            <div class="sd appear">
+              <p class="text sd appear">メールアドレス</p>
+              <p class="text sd appear">*</p>
+            </div>
+            <input name="メールアドレス" placeholder="ご連絡可能なメールアドレスを入力" required="" type="email" autocomplete="off" class="sd appear">
+          </label>
+          <label class="sd appear">
+            <div class="sd appear">
+              <p class="text sd appear">ご住所</p>
+              <p class="text sd appear">*</p>
+            </div>
+            <input name="ご住所" placeholder="ご住所を入力" required="" type="text" autocomplete="off" class="sd appear">
+          </label>
+          <label class="sd appear">
+            <div class="sd appear">
+              <p class="text sd appear">ご年齢</p>
+              <p class="text sd appear">*</p>
+            </div>
+            <input name="ご年齢" placeholder="ご年齢を入力（整数）" required="" type="text" autocomplete="off" class="sd appear">
+          </label>
+          <label class="sd appear">
+            <div class="sd appear">
+              <p class="text sd appear">電話番号</p>
+              <p class="text sd appear">*</p>
+            </div>
+            <input name="電話番号" placeholder="電話番号(ハイフン無し)を入力" required="" type="tel" autocomplete="off" class="sd appear">
+          </label>
+          <label class="sd appear">
+            <div class="sd appear">
+              <p class="text sd appear">LINE ID</p>
+              <p class="text sd appear">*</p>
+            </div>
+            <input name="LINEID" placeholder="LINEID" required="" type="tel" autocomplete="off" class="sd appear">
+          </label>
+          <label class="sd appear">
+            <div class="sd appear">
+              <p class="text sd appear">TikTokプロフィールURL</p>
+            </div>
+            <input name="TikTokプロフィール名" placeholder="https://www.tiktok.com/@entame_station" type="text" autocomplete="off" class="sd appear">
+          </label>
+          <label class="sd appear">
+            <div class="sd appear">
+              <p class="text sd appear">YouTubeURL</p>
+            </div>
+            <input name="YouTubeURL" placeholder="https://www.youtube.com/c/adictor" type="text" autocomplete="off" class="sd appear">
+          </label>
+          <label class="sd appear">
+            <div class="sd appear">
+              <p class="text sd appear">InstagramURL</p>
+            </div>
+            <input name="InstagramURL" placeholder="https://www.instagram.com/adictor_jp/" type="text" autocomplete="off" class="sd appear">
+          </label>
+          <label class="sd appear">
+            <div class="sd appear">
+              <p class="text sd appear">X URL</p>
+            </div>
+            <input name="X URL" placeholder="https://twitter.com/adictorofficial" type="text" autocomplete="off" class="sd appear">
+          </label>
+          <label class="sd appear">
+            <input name="Confirm" required="" type="checkbox" class="sd appear">
+            <a href="/terms-and-conditions" class="text link sd appear">個人向け取引基本規約に同意する</a>
+          </label>
+          <button class="button sd appear"><p  class="text sd appear">送　信</p></button>
+        </form>
+      </div>
 
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.2/auth0-spa-js.production.js"></script>
-    <script src="script.js"></script>
+      <script src="https://cdn.auth0.com/js/auth0-spa-js/1.2/auth0-spa-js.production.js"></script>
+      <script src="script.js"></script>
+    </div>
   </body>
 </html>

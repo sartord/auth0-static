@@ -14,70 +14,155 @@
       }
 
       .desc{
-        color: #FF0000;
         font-size: 12px;
         font-weight: bold;
       }
+
+      .red {
+        margin-left: 4px;
+        font-size: 14px;
+        color: #FF0000;
+      }
+
+      body {
+        background-color: #000000;
+        color: #FFFFFF;
+      }
+
+      .content {
+        width: 100%;
+        text-align: left;
+        display: flex;
+        justify-content: center;
+      }
+
+      .content-child {
+        text-align: left;
+      }
+
+      .title {
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .input {
+        background: #FFFFFF;
+        border-bottom: 1px solid #EEEEEE;
+        border-left: 1px solid #EEEEEE;
+        border-radius: 4px;
+        border-right: 1px solid #EEEEEE;
+        border-top: 1px solid #EEEEEE;
+        box-shadow: none;
+        color: #333;
+        font-family: var(--s-font-7d98353a);
+        font-size: 15px;
+        font-weight: 400;
+        height: 17px;
+        justify-content: center;
+        letter-spacing: 0em;
+        line-height: 1.4;
+        opacity: 1;
+        padding: 10px 16px 10px 16px;
+        text-align: left;
+        text-shadow: none;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .confirm {
+        float:left;
+      }
+
+      .kojin-jouhou {
+        color:#FFFFFF;
+        margin-left: 5px;
+      }
     </style>
+    <script src="formValidation.js"></script>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.2/auth0-spa-js.production.js"></script>
+    <script src="input.js"></script>
   </head>
 
   <body>
-    <p>
-      インフルエンサー/クリエイター<br/>
-      登録フォーム
-    </p>
-    <div id="login">
-      <span class="desc">インフルエンサーの登録には「Line ID連携」が必須です</span><br/>
-      <img src="login.png" onclick="login()" style="cursor:pointer;" />
-    </div>
-    <div id="logout" style="display:none;">
-      <button onclick="logout()">連携解除</button>
-    </div>
-    
-    <!--ログイン後に表示-->
-    <div class="hidden" id="gated-content">
-      <form id="userForm">
-        <label for="fullname">ご本名:</label>
-        <input type="text" id="fullname" name="fullname" required><br><br>
+    <div class="content">
+      <div class="content-child">
+        <p class="title">
+          インフルエンサー/クリエイター<br/>
+          登録フォーム
+        </p>
+        <div id="login">
+          <span class="desc">インフルエンサーの登録には「Line ID連携」が必須です</span><br/>
+          <img src="login.png" onclick="login()" style="cursor:pointer;" />
+        </div>
+        <div id="logout" style="display:none;">
+          <button onclick="logout()">連携解除</button>
+        </div>
+        <br>
         
-        <label for="email">メールアドレス:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        
-        <label for="address">ご住所:</label>
-        <input type="text" id="address" name="address" required><br><br>
-        
-        <label for="age">ご年齢:</label>
-        <input type="text" id="age" name="age" required><br><br>
-        
-        <label for="phone">電話番号:</label>
-        <input type="tel" id="phone" name="phone" required><br><br>
+        <!--ログイン後に表示-->
+        <div class="hidden" id="gated-content">
+          <form id="userForm" action="https://buzzrista.logly.co.jp/Registration" method="POST">
+            <label for="fullname">
+              ご本名
+              <span class="red">*</span>
+            </label>
+            <input class="input" type="text" id="fullname" name="fullname" required><br><br>
+            
+            <label for="email">
+              メールアドレス
+              <span class="red">*</span>
+            </label>
+            <input class="input" type="email" id="email" name="email" required><br><br>
+            
+            <label for="address">
+              ご住所
+              <span class="red">*</span>
+            </label>
+            <input class="input" type="text" id="address" name="address" required><br><br>
+            
+            <label for="age">
+              ご年齢
+              <span class="red">*</span>
+            </label>
+            <input class="input" type="text" id="age" name="age" required><br><br>
+            
+            <label for="phone">
+              電話番号
+              <span class="red">*</span>
+            </label>
+            <input class="input" type="tel" id="phone" name="phone" required><br><br>
 
-        <input type="hidden" id="line_id" name="line">
-        <input type="hidden" id="line_info" name="line_info">
-        
-        <label for="tiktok">TikTok URL:</label>
-        <input type="url" id="tiktok" name="tiktok"><br><br>
-        
-        <label for="youtube">YouTube URL:</label>
-        <input type="url" id="youtube" name="youtube"><br><br>
-        
-        <label for="instagram">Instagram URL:</label>
-        <input type="url" id="instagram" name="instagram"><br><br>
-        
-        <label for="twitter">X (Twitter) URL:</label>
-        <input type="url" id="twitter" name="twitter"><br><br>
-        
-        <label for="consent">個人情報同意:</label>
-        <input name="confirm" id="confirm" required="" type="checkbox" class="sd appear"><br><br>
-        <a href="https://buzzrista.logly.co.jp/terms-and-conditions" class="text link sd appear">個人向け取引基本規約に同意する</a><br><br>
-        
-        <button type="submit">送信</button>
-    </form>
+            <input type="hidden" id="line_id" name="line">
+            <input class="input" type="hidden" id="line_info" name="line_info">
+            
+            <label for="tiktok">
+              TikTok URL
+            </label>
+            <input class="input" type="url" id="tiktok" name="tiktok"><br><br>
+            
+            <label for="youtube">
+              YouTube URL
+            </label>
+            <input class="input" type="url" id="youtube" name="youtube"><br><br>
+            
+            <label for="instagram">
+              Instagram URL
+            </label>
+            <input class="input" type="url" id="instagram" name="instagram"><br><br>
+            
+            <label for="twitter">
+              X (Twitter) URL
+            </label>
+            <input class="input" type="url" id="twitter" name="twitter"><br><br>
 
-    <script src="formValidation.js"></script>
+
+            <input class="confirm" name="confirm" id="confirm" required="" type="checkbox" >
+            <a class="kojin-jouhou" href="https://buzzrista.logly.co.jp/terms-and-conditions" >個人向け取引基本規約に同意する</a><br><br>
+            
+            <button type="submit">送信</button>
+          </form>
+        </div>
+      </div>
     </div>
-
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.2/auth0-spa-js.production.js"></script>
-    <script src="script.js"></script>
   </body>
 </html>
