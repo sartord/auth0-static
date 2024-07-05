@@ -2,7 +2,7 @@
 
 const APP_PATH = `/auth0-static`;
 let auth0 = null;
-const fetchAuthConfig = () => fetch("auth_config.json");
+const fetchAuthConfig = () => fetch("js/auth_config.json");
 
 const configureClient = async () => {
   const response = await fetchAuthConfig();
