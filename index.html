@@ -27,65 +27,67 @@
           <button onclick="logout()">連携解除</button>
         </div>
         <br>
-        
+        <!--
+        {"form_name":"インフルエンサー登録フォーム","data":[["お名前","大久保テスト１","TEXT"],["メールアドレス","okubo@logly.co.jp","EMAIL"],["ご住所","千葉県浦安市","TEXT"],["ご年齢","45","TEXT"],["電話番号","0803087190","TEL"],["LINEID","helloworld","TEL"],["TikTokプロフィール名","","TEXT"],["YouTubeURL","","TEXT"],["InstagramURL","","TEXT"],["X URL","","TEXT"],["Confirm","on","CHECKBOX"]],"is_preview":false}
+        -->
         <!--ログイン後に表示-->
         <div class="hidden" id="gated-content">
-          <form id="userForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSejYCpFD4NmNSGIrn8Hptq4RpUPKSu-gfSF3cMDz-bzGw0Mvw/formResponse?embedded=true" method="POST">
+          <form id="userForm" action="https://api.studiodesignapp.com/api/v2/projects/Kwa531JrOX/form" method="POST" name="インフルエンサー登録フォーム">
             <label for="fullname">
               ご本名
               <span class="red">*</span>
             </label>
-            <input placeholder="氏名を入力" class="input" type="text" id="fullname" name="1744008820" required><br><br>
+            <input placeholder="氏名を入力" class="input" type="text" id="fullname" name="お名前" required><br><br>
             
             <label for="email">
               メールアドレス
               <span class="red">*</span>
             </label>
-            <input placeholder="連絡可能なメールアドレスを入力" class="input" type="email" id="email" name="1405098827" required><br><br>
+            <input placeholder="連絡可能なメールアドレスを入力" class="input" type="email" id="email" name="メールアドレス" required><br><br>
             
             <label for="address">
               ご住所
               <span class="red">*</span>
             </label>
-            <input placeholder="ご住所を入力" class="input" type="text" id="address" name="412242771" required><br><br>
+            <input placeholder="ご住所を入力" class="input" type="text" id="address" name="ご住所" required><br><br>
             
             <label for="age">
               ご年齢
               <span class="red">*</span>
             </label>
-            <input placeholder="ご年齢を入力（整数）" class="input" type="text" id="age" name="44907791" required><br><br>
+            <input placeholder="ご年齢を入力（整数）" class="input" type="text" id="age" name="ご年齢" required><br><br>
             
             <label for="phone">
               電話番号
               <span class="red">*</span>
             </label>
-            <input placeholder="電話番号（ハイフン無し）を入力" class="input" type="tel" id="phone" name="1096127418" required><br><br>
+            <input placeholder="電話番号（ハイフン無し）を入力" class="input" type="tel" id="phone" name="電話番号" required><br><br>
 
-            <input type="hidden" id="line_id" name="1884447936">
+            <input type="hidden" id="LINEID" name="1884447936">
             <input class="input" type="hidden" id="line_info" name="1608010717">
             
             <label for="tiktok">
               TikTok URL
             </label>
-            <input placeholder="https://www.tiktok.com/@entame_station" class="input" type="url" id="tiktok" name="2121081609"><br><br>
+            <input placeholder="https://www.tiktok.com/@entame_station" class="input" type="url" id="tiktok" name="TikTokプロフィール名"><br><br>
             
             <label for="youtube">
               YouTube URL
             </label>
-            <input placeholder="https://www.youtube.com/c/adictor" class="input" type="url" id="youtube" name="970801559"><br><br>
+            <input placeholder="https://www.youtube.com/c/adictor" class="input" type="url" id="youtube" name="YouTubeURL"><br><br>
             
             <label for="instagram">
               Instagram URL
             </label>
-            <input placeholder="https://www.instagram.com/adictor_jp/" class="input" type="url" id="instagram" name="1519858539"><br><br>
+            <input placeholder="https://www.instagram.com/adictor_jp/" class="input" type="url" id="instagram" name="InstagramURL"><br><br>
             
             <label for="twitter">
               X (Twitter) URL
             </label>
-            <input placeholder="https://twitter.com/adictorofficial" class="input" type="url" id="twitter" name="2135960104"><br><br>
+            <input placeholder="https://twitter.com/adictorofficial" class="input" type="url" id="twitter" name="X URL"><br><br>
 
 
-            <input class="confirm" name="confirm" id="confirm" required="" type="checkbox" >
+            <input class="confirm" name="Confirm" id="confirm" required="" type="checkbox" >
             <a class="kojin-jouhou" href="https://buzzrista.logly.co.jp/terms-and-conditions" >個人向け取引基本規約に同意する</a><br><br>
             
             <button class="submit" type="submit">送信</button><br><br>
