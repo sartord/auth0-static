@@ -3,93 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <title>Buzzrista Form</title>
-    <style>
-      .hidden {
-        display: none;
-      }
-      
-      label {
-        margin-bottom: 10px;
-        display: block;
-      }
-
-      .desc{
-        font-size: 12px;
-        font-weight: bold;
-      }
-
-      .red {
-        margin-left: 4px;
-        font-size: 14px;
-        color: #FF0000;
-      }
-
-      body {
-        background-color: #000000;
-        color: #FFFFFF;
-      }
-
-      .content {
-        width: 100%;
-        text-align: left;
-        display: flex;
-        justify-content: center;
-      }
-
-      .content-child {
-        text-align: left;
-      }
-
-      .title {
-        font-size: 24px;
-        font-weight: 700;
-      }
-
-      .input {
-        background: #FFFFFF;
-        border-bottom: 1px solid #EEEEEE;
-        border-left: 1px solid #EEEEEE;
-        border-radius: 4px;
-        border-right: 1px solid #EEEEEE;
-        border-top: 1px solid #EEEEEE;
-        box-shadow: none;
-        color: #333;
-        font-family: var(--s-font-7d98353a);
-        font-size: 15px;
-        font-weight: 400;
-        height: 17px;
-        justify-content: center;
-        letter-spacing: 0em;
-        line-height: 1.4;
-        opacity: 1;
-        padding: 10px 16px 10px 16px;
-        text-align: left;
-        text-shadow: none;
-        width: 100%;
-        max-width: 100%;
-      }
-
-      .confirm {
-        float:left;
-      }
-
-      .kojin-jouhou {
-        color:#FFFFFF;
-        margin-left: 5px;
-      }
-    </style>
-    <script src="formValidation.js"></script>
+    <link rel="stylesheet" href="style/main.css" type="text/css">
+    <script src="js/formValidation.js"></script>
     <script src="https://cdn.auth0.com/js/auth0-spa-js/1.2/auth0-spa-js.production.js"></script>
-    <script src="input.js"></script>
+    <script src="js/input.js"></script>
   </head>
 
   <body>
     <div class="content">
       <div class="content-child">
-        <p class="title">
-          インフルエンサー/クリエイター<br/>
-          登録フォーム
-        </p>
+        <div style="text-align: center;">
+          <p class="title">
+            インフルエンサー/クリエイター<br/>
+            登録フォーム
+          </p>
+          <center><div class="deco"></div><br/></center>
+        </div>
         <div id="login">
           <span class="desc">インフルエンサーの登録には「Line ID連携」が必須です</span><br/>
           <img src="login.png" onclick="login()" style="cursor:pointer;" />
@@ -100,7 +29,7 @@
         <br>
         
         <!--ログイン後に表示-->
-        <div class="hidden" id="gated-content">
+        <div class="hidden2" id="gated-content">
           <form id="userForm" action="https://buzzrista.logly.co.jp/Registration" method="POST">
             <label for="fullname">
               ご本名
@@ -159,10 +88,18 @@
             <input class="confirm" name="confirm" id="confirm" required="" type="checkbox" >
             <a class="kojin-jouhou" href="https://buzzrista.logly.co.jp/terms-and-conditions" >個人向け取引基本規約に同意する</a><br><br>
             
-            <button type="submit">送信</button>
+            <button class="submit" type="submit">送信</button><br><br>
           </form>
         </div>
       </div>
     </div>
+    <br><br>
+    <footer>
+      <hr/>
+      <br/>
+      <img width="180" alt="" src="https://storage.googleapis.com/studio-design-asset-files/projects/EXawB3xZqD/s-300x77_8f3a803c-6709-49fe-a7a1-c17a64c49292.svg">
+      <p>LOGLY, Inc. © Copyright, All Rights Reserved</p>
+      <br/>
+    </footer>
   </body>
 </html>
