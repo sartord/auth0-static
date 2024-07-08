@@ -34,7 +34,7 @@
         {"form_name":"インフルエンサー登録フォーム","data":[["お名前","大久保テスト１","TEXT"],["メールアドレス","okubo@logly.co.jp","EMAIL"],["ご住所","千葉県浦安市","TEXT"],["ご年齢","45","TEXT"],["電話番号","0803087190","TEL"],["LINEID","helloworld","TEL"],["TikTokプロフィール名","","TEXT"],["YouTubeURL","","TEXT"],["InstagramURL","","TEXT"],["X URL","","TEXT"],["Confirm","on","CHECKBOX"]],"is_preview":false}
         -->
         <!--ログイン後に表示-->
-        <div class="hidden" id="gated-content">
+        <div class="hidden2" id="gated-content">
           <form id="userForm" name="インフルエンサー登録フォーム">
             <label for="fullname">
               ご本名
@@ -93,7 +93,7 @@
             <input class="confirm" name="Confirm" id="confirm" required="" type="checkbox" >
             <a class="kojin-jouhou" href="https://buzzrista.logly.co.jp/terms-and-conditions" >個人向け取引基本規約に同意する</a><br><br>
             
-            <button class="submit" type="submit">送信</button><br><br>
+            <button class="submit" type="button" onclick="send_form();">送信</button><br><br>
           </form>
         </div>
         <div class="hidden" id="thanks">

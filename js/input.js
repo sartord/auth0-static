@@ -70,3 +70,28 @@ const logout = () => {
     returnTo: window.location.origin + APP_PATH
   });
 };
+
+function send_form(){
+  //alert("helo3");
+  
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "https://api.studiodesignapp.com/api/v2/projects/Kwa531JrOX/form");
+  xhr.setRequestHeader("Content-Type", "application/json");
+  const body = '{"form_name":"インフルエンサー登録フォーム","data":[["お名前","大久保テストjs text送信","TEXT"],["メールアドレス","okubo@logly.co.jp","EMAIL"],["ご住所","千葉県浦安市","TEXT"],["ご年齢","45","TEXT"],["電話番号","0803087190","TEL"],["LINEID","helloworld","TEL"],["TikTokプロフィール名","","TEXT"],["YouTubeURL","","TEXT"],["InstagramURL","","TEXT"],["X URL","","TEXT"],["Confirm","on","CHECKBOX"]],"is_preview":false}';
+  // const body = JSON.stringify({
+  //   title: "Hello World",
+  //   body: "My POST request",
+  //   userId: 900,
+  // });
+  xhr.onload = () => {
+    if (xhr.readyState == 4 && xhr.status == 201) {
+      console.log(JSON.parse(xhr.responseText));
+    } else {
+      console.log(`Error: ${xhr.status}`);
+    }
+  };
+  xhr.send(body);
+  document.getElementById("gated-content").style.display = "none";
+  document.getElementById("thanks").style.display = "block";
+};
+
