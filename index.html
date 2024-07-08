@@ -28,11 +28,14 @@
         </div>
         <br>
         <!--
+          curl -X POST -H "Content-Type: application/json" -d '{"form_name":"インフルエンサー登録フォーム","data":[["お名前","大久保テスト2","TEXT"],["メールアドレス","okubo@logly.co.jp","EMAIL"],["ご住所","千葉県浦安市","TEXT"],["ご年齢","45","TEXT"],["電話番号","0803087190","TEL"],["LINEID","helloworld","TEL"],["TikTokプロフィール名","","TEXT"],["YouTubeURL","","TEXT"],["InstagramURL","","TEXT"],["X URL","","TEXT"],["Confirm","on","CHECKBOX"]],"is_preview":false}' https://api.studiodesignapp.com/api/v2/projects/Kwa531JrOX/form
+        -->
+        <!--
         {"form_name":"インフルエンサー登録フォーム","data":[["お名前","大久保テスト１","TEXT"],["メールアドレス","okubo@logly.co.jp","EMAIL"],["ご住所","千葉県浦安市","TEXT"],["ご年齢","45","TEXT"],["電話番号","0803087190","TEL"],["LINEID","helloworld","TEL"],["TikTokプロフィール名","","TEXT"],["YouTubeURL","","TEXT"],["InstagramURL","","TEXT"],["X URL","","TEXT"],["Confirm","on","CHECKBOX"]],"is_preview":false}
         -->
         <!--ログイン後に表示-->
         <div class="hidden" id="gated-content">
-          <form id="userForm" action="https://api.studiodesignapp.com/api/v2/projects/Kwa531JrOX/form" method="POST" name="インフルエンサー登録フォーム">
+          <form id="userForm" name="インフルエンサー登録フォーム">
             <label for="fullname">
               ご本名
               <span class="red">*</span>
@@ -63,8 +66,8 @@
             </label>
             <input placeholder="電話番号（ハイフン無し）を入力" class="input" type="tel" id="phone" name="電話番号" required><br><br>
 
-            <input type="hidden" id="LINEID" name="1884447936">
-            <input class="input" type="hidden" id="line_info" name="1608010717">
+            <input type="hidden" id="LINEID" name="LINEID">
+            <input class="input" type="hidden" id="line_info" name="LINEINFO">
             
             <label for="tiktok">
               TikTok URL
@@ -92,6 +95,12 @@
             
             <button class="submit" type="submit">送信</button><br><br>
           </form>
+        </div>
+        <div class="hidden" id="thanks">
+          <p class="title">
+            ご登録のお申し込みありがとうございます。<br/><br/>
+            担当者にて確認させていただきます。
+          </p>
         </div>
       </div>
     </div>
