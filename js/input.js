@@ -130,6 +130,6 @@ function send_form(){
   document.getElementById("thanks").style.display = "block";
   document.getElementById("logout").style.display = "none";
 
-  window.scroll({top: 0, behavior: 'instant'});
+  location.hash='pagetop';
 };
 
