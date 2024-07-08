@@ -71,18 +71,52 @@ const logout = () => {
   });
 };
 
+function valid(){
+  let isValid = true;
+    
+  const requiredFields = { "fullname":"ご本名", "email":"メールアドレス", "address":"ご住所", "age":"ご年齢", "phone":"電話番号 ", "confirm":"個人向け取引基本規約に同意する" };
+  for (let key in requiredFields) {
+      const input = document.getElementById(key);
+      if(key == "confirm"){
+        if (input.checked == false) {
+            isValid = false;
+        }
+      } else {
+        if (input.value.trim() === '') {
+            isValid = false;
+        }
+      }
+
+      if ( isValid == false ){
+        alert(`${requiredFields[key]} は必須です。`);
+          input.focus();
+          return false;
+      }
+  };
+  return true;
+};
+
 function send_form(){
-  //alert("helo3");
+  if (valid() == false ){ return false;}
   
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "https://api.studiodesignapp.com/api/v2/projects/Kwa531JrOX/form");
   xhr.setRequestHeader("Content-Type", "application/json");
-  const body = '{"form_name":"インフルエンサー登録フォーム","data":[["お名前","大久保テストjs text送信","TEXT"],["メールアドレス","okubo@logly.co.jp","EMAIL"],["ご住所","千葉県浦安市","TEXT"],["ご年齢","45","TEXT"],["電話番号","0803087190","TEL"],["LINEID","helloworld","TEL"],["TikTokプロフィール名","","TEXT"],["YouTubeURL","","TEXT"],["InstagramURL","","TEXT"],["X URL","","TEXT"],["Confirm","on","CHECKBOX"]],"is_preview":false}';
-  // const body = JSON.stringify({
-  //   title: "Hello World",
-  //   body: "My POST request",
-  //   userId: 900,
-  // });
+
+  let data = [];
+  data.push(["お名前", document.getElementById("fullname").value, "TEXT"]);
+  data.push(["メールアドレス", document.getElementById("email").value, "EMAIL"]);
+  data.push(["ご住所", document.getElementById("address").value, "TEXT"]);
+  data.push(["ご年齢", document.getElementById("age").value, "TEXT"]);
+  data.push(["電話番号", document.getElementById("phone").value, "TEL"]);
+  data.push(["LINEID", document.getElementById("line_id").value, "TEXT"]);
+  data.push(["TikTokプロフィール名", document.getElementById("tiktok").value, "TEXT"]);
+  data.push(["YouTubeURL", document.getElementById("youtube").value, "TEXT"]);
+  data.push(["InstagramURL", document.getElementById("instagram").value, "TEXT"]);
+  data.push(["X URL", document.getElementById("twitter").value, "TEXT"]);
+  data.push(["Confirm", "on", "CHECKBOX"]);
+  const body = JSON.stringify({"form_name":"インフルエンサー登録フォーム","data":data,"is_preview":false});
+  
   xhr.onload = () => {
     if (xhr.readyState == 4 && xhr.status == 201) {
       console.log(JSON.parse(xhr.responseText));
@@ -91,6 +125,7 @@ function send_form(){
     }
   };
   xhr.send(body);
+
   document.getElementById("gated-content").style.display = "none";
   document.getElementById("thanks").style.display = "block";
 };
