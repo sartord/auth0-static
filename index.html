@@ -27,14 +27,8 @@
           <button onclick="logout()">連携解除</button>
         </div>
         <br>
-        <!--
-          curl -X POST -H "Content-Type: application/json" -d '{"form_name":"インフルエンサー登録フォーム","data":[["お名前","大久保テスト2","TEXT"],["メールアドレス","okubo@logly.co.jp","EMAIL"],["ご住所","千葉県浦安市","TEXT"],["ご年齢","45","TEXT"],["電話番号","0803087190","TEL"],["LINEID","helloworld","TEL"],["TikTokプロフィール名","","TEXT"],["YouTubeURL","","TEXT"],["InstagramURL","","TEXT"],["X URL","","TEXT"],["Confirm","on","CHECKBOX"]],"is_preview":false}' https://api.studiodesignapp.com/api/v2/projects/Kwa531JrOX/form
-        -->
-        <!--
-        {"form_name":"インフルエンサー登録フォーム","data":[["お名前","大久保テスト１","TEXT"],["メールアドレス","okubo@logly.co.jp","EMAIL"],["ご住所","千葉県浦安市","TEXT"],["ご年齢","45","TEXT"],["電話番号","0803087190","TEL"],["LINEID","helloworld","TEL"],["TikTokプロフィール名","","TEXT"],["YouTubeURL","","TEXT"],["InstagramURL","","TEXT"],["X URL","","TEXT"],["Confirm","on","CHECKBOX"]],"is_preview":false}
-        -->
-        <!--ログイン後に表示-->
-        <div class="hidden2" id="gated-content">
+
+        <div class="hidden" id="gated-content">
           <form id="userForm" name="インフルエンサー登録フォーム">
             <label for="fullname">
               ご本名

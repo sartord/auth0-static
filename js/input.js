@@ -116,7 +116,7 @@ function send_form(){
   data.push(["X URL", document.getElementById("twitter").value, "TEXT"]);
   data.push(["Confirm", "on", "CHECKBOX"]);
   const body = JSON.stringify({"form_name":"インフルエンサー登録フォーム","data":data,"is_preview":false});
-  
+
   xhr.onload = () => {
     if (xhr.readyState == 4 && xhr.status == 201) {
       console.log(JSON.parse(xhr.responseText));
@@ -128,5 +128,6 @@ function send_form(){
 
   document.getElementById("gated-content").style.display = "none";
   document.getElementById("thanks").style.display = "block";
+  document.getElementById("logout").style.display = "none";
 };
 
