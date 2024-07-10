@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <title>Buzzrista Form</title>
     <link rel="stylesheet" href="style/main.css" type="text/css">
-    <script src="js/formValidation.js"></script>
     <script src="https://cdn.auth0.com/js/auth0-spa-js/1.2/auth0-spa-js.production.js"></script>
     <script src="js/input.js"></script>
   </head>
@@ -12,7 +11,7 @@
   <body>
     <div class="content">
       <div class="content-child">
-        <div style="text-align: center;">
+        <div class="main">
           <a name="pagetop"></a>
           <p class="title">
             インフルエンサー/クリエイター<br/>
@@ -20,16 +19,16 @@
           </p>
           <center><div class="deco"></div><br/></center>
         </div>
-        <div id="login">
-          <span class="desc">インフルエンサーの登録には「Line ID連携」が必須です</span><br/>
+        <div id="login"  class="main">
+          <span class="desc">インフルエンサーの登録には「Line ID連携」が必須です</span><br/><br/>
           <img src="login.png" onclick="login()" style="cursor:pointer;" />
         </div>
-        <div id="logout" style="display:none;">
+        <div id="logout"  class="main hidden">
           <button onclick="logout()">連携解除</button>
         </div>
         <br>
 
-        <div class="hidden" id="gated-content">
+        <div class="gated-content hidden2" id="gated-content">
           <form id="userForm" name="インフルエンサー登録フォーム">
             <label for="fullname">
               ご本名
